@@ -1,0 +1,15 @@
+{
+  "name": "atanase-smiles-api",
+  "version": "1.0.0",
+  "description": "Backend API for Atanase Smiles landing page form submissions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "googleapis": "^131.0.0",
+    "twilio": "^4.23.0"
+  }
+}

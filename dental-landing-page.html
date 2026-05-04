@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '810235131825328');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=810235131825328&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPAP Alternative | Atanase Smiles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+            max-width: 480px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: #1a5c6b;
+            color: white;
+            padding: 28px 24px;
+            text-align: center;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .header-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .google-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .stars {
+            color: #fbbf24;
+            letter-spacing: 1px;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            padding: 20px 24px 0;
+            background: #fafafa;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #e5e5e5;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #1a5c6b;
+            border-radius: 3px;
+            transition: width 0.4s ease;
+        }
+
+        .progress-text {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Form Steps */
+        .form-content {
+            padding: 32px 24px;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .step {
+            display: none;
+            flex-direction: column;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .step.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .step h2 {
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 24px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Option Buttons */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-btn {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+            color: #333;
+        }
+
+        .option-btn:hover {
+            border-color: #1a5c6b;
+            background: #f8fafa;
+        }
+
+        .option-btn.selected {
+            border-color: #1a5c6b;
+            background: #f0f7f8;
+        }
+
+        .option-btn strong {
+            display: block;
+            font-weight: 500;
+        }
+
+        .option-btn span {
+            font-size: 13px;
+            color: #777;
+            margin-top: 2px;
+            display: block;
+        }
+
+        /* Input Fields */
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #1a5c6b;
+        }
+
+        .input-group input::placeholder {
+            color: #aaa;
+        }
+
+        /* Buttons */
+        .btn-continue {
+            background: #1a5c6b;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: auto;
+            transition: background 0.2s;
+        }
+
+        .btn-continue:hover {
+            background: #154a57;
+        }
+
+        .btn-back {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 13px;
+            cursor: pointer;
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .btn-back:hover {
+            color: #555;
+        }
+
+        /* Final Step */
+        .success-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .success-header .checkmark {
+            width: 56px;
+            height: 56px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .success-header .checkmark svg {
+            width: 28px;
+            height: 28px;
+            stroke: white;
+            stroke-width: 3;
+        }
+
+        .success-header h2 {
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .success-header p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .qualification-badge {
+            background: #f0f7f8;
+            border: 1px solid #1a5c6b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .qualification-badge h3 {
+            font-size: 24px;
+            color: #1a5c6b;
+            margin-bottom: 4px;
+        }
+
+        .qualification-badge p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Timer */
+        .timer-section {
+            background: #fef2f2;
+            border: 1px solid #fca5a5;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .timer-section p {
+            color: #b91c1c;
+            font-weight: 500;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .timer-item {
+            background: #b91c1c;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 4px;
+            min-width: 55px;
+        }
+
+        .timer-number {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .timer-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 16px 24px;
+            border-top: 1px solid #eee;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .trust-icons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .trust-icons span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-text">Atanase Smiles</div>
+            <p class="header-subtitle">See if you qualify for a CPAP alternative in under 60 seconds</p>
+            <div class="google-rating">
+                <span class="stars">★★★★★</span>
+                <span>4.9 rating · 160 Google Reviews</span>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 14%"></div>
+            </div>
+            <p class="progress-text">Step <span id="currentStep">1</span> of 7</p>
+        </div>
+
+        <!-- Form Content -->
+        <div class="form-content">
+            <!-- Step 1: Current CPAP Status -->
+            <div class="step active" id="step1">
+                <h2>Do you currently use a CPAP machine?</h2>
+                <div class="options">
+                    <button class="option-btn" onclick="selectOption(1, 'Yes, currently using CPAP')">
+                        <strong>Yes, I currently use a CPAP</strong>
+                        <span>Looking for an alternative</span>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(1, 'Yes, but stopped using it')">
+                        <strong>Yes, but I stopped using it</strong>
+                        <span>CPAP was uncomfortable or inconvenient</span>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(1, 'No, recently diagnosed')">
+                        <strong>No, I was recently diagnosed</strong>
+                        <span>Looking for treatment options</span>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(1, 'No, but suspect sleep apnea')">
+                        <strong>No, but I suspect I have sleep apnea</strong>
+                        <span>Experiencing symptoms</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Sleep Study -->
+            <div class="step" id="step2">
+                <h2>Have you done a sleep study?</h2>
+                <div class="options">
+                    <button class="option-btn" onclick="selectOption(2, 'Yes, completed sleep study')">
+                        <strong>Yes, I have</strong>
+                        <span>Completed a sleep study</span>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(2, 'No, not yet')">
+                        <strong>No, not yet</strong>
+                        <span>Haven't had a sleep study</span>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(2, 'Scheduled soon')">
+                        <strong>I have one scheduled</strong>
+                        <span>Sleep study coming up</span>
+                    </button>
+                </div>
+                <button class="btn-back" onclick="goBack(2)">Back</button>
+            </div>
+
+            <!-- Step 3: Sleep Apnea Severity -->
+            <div class="step" id="step3">
+                <h2>How would you describe your sleep apnea?</h2>
+                <div class="options">
+                    <button class="option-btn" onclick="selectOption(3, 'Mild')">
+                        <strong>Mild</strong>
+                        <span>5-15 breathing interruptions per hour</span>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(3, 'Moderate')">
+                        <strong>Moderate</strong>
+                        <span>15-30 breathing interruptions per hour</span>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(3, 'Severe')">
+                        <strong>Severe</strong>
+                        <span>30+ breathing interruptions per hour</span>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(3, 'Not sure')">
+                        <strong>I'm not sure</strong>
+                        <span>Haven't had a sleep study or don't remember</span>
+                    </button>
+                </div>
+                <button class="btn-back" onclick="goBack(3)">Back</button>
+            </div>
+
+            <!-- Step 4: Insurance -->
+            <div class="step" id="step4">
+                <h2>Do you have dental or medical insurance?</h2>
+                <div class="options">
+                    <button class="option-btn" onclick="selectOption(4, 'Yes, dental insurance')">
+                        <strong>Yes, I have dental insurance</strong>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(4, 'Yes, medical insurance')">
+                        <strong>Yes, I have medical insurance</strong>
+                        <span>Often covers sleep apnea treatment</span>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(4, 'Both dental and medical')">
+                        <strong>I have both</strong>
+                        <span>We'll help maximize your benefits</span>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(4, 'No insurance')">
+                        <strong>No insurance</strong>
+                        <span>Financing options available</span>
+                    </button>
+                </div>
+                <button class="btn-back" onclick="goBack(4)">Back</button>
+            </div>
+
+            <!-- Step 5: Name -->
+            <div class="step" id="step5">
+                <p style="text-align: center; color: #1a5c6b; font-weight: 600; margin-bottom: 8px;">See if you qualify</p>
+                <h2>What's your name?</h2>
+                <div class="input-group">
+                    <label>First Name</label>
+                    <input type="text" id="firstName" placeholder="Enter your first name">
+                </div>
+                <div class="input-group">
+                    <label>Last Name</label>
+                    <input type="text" id="lastName" placeholder="Enter your last name">
+                </div>
+                <button class="btn-continue" onclick="submitName()">Continue</button>
+                <button class="btn-back" onclick="goBack(5)">Back</button>
+            </div>
+
+            <!-- Step 6: Contact -->
+            <div class="step" id="step6">
+                <p style="text-align: center; color: #1a5c6b; font-weight: 600; margin-bottom: 8px;">See if you qualify</p>
+                <h2>How can we reach you?</h2>
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" placeholder="(555) 123-4567">
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com">
+                </div>
+                <button class="btn-continue" onclick="submitContact()">See My Results</button>
+                <button class="btn-back" onclick="goBack(6)">Back</button>
+            </div>
+
+            <!-- Step 7: Results -->
+            <div class="step" id="step7">
+                <div class="success-header">
+                    <div class="checkmark">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2>Great news, <span id="userName">there</span>!</h2>
+                    <p>Based on your answers, you may be a candidate for oral appliance therapy — a comfortable CPAP alternative.</p>
+                </div>
+
+                <div class="qualification-badge">
+                    <h3>Free Consultation</h3>
+                    <p>Learn if a custom oral appliance is right for you</p>
+                </div>
+
+                <a href="tel:9736350626" class="btn-continue" style="text-decoration: none; display: block; text-align: center;">
+                    Call Now: (973) 635-0626
+                </a>
+
+                <div class="timer-section">
+                    <p>Limited appointments available. Offer expires in:</p>
+                    <div class="timer">
+                        <div class="timer-item">
+                            <div class="timer-number" id="timerMin">05</div>
+                            <div class="timer-label">Min</div>
+                        </div>
+                        <div class="timer-item">
+                            <div class="timer-number" id="timerSec">00</div>
+                            <div class="timer-label">Sec</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="trust-icons">
+                <span>Secure Form</span>
+                <span>|</span>
+                <span>HIPAA Compliant</span>
+                <span>|</span>
+                <span>No Obligation</span>
+            </div>
+            <p>Your information is secure and will never be shared with third parties.</p>
+        </div>
+    </div>
+
+    <script>
+        // API endpoint - update this after deploying App Runner
+        const API_URL = 'https://m2e4y59snn.us-east-1.awsapprunner.com';
+
+        let currentStep = 1;
+        const totalSteps = 7;
+        let formData = {};
+
+        function updateProgress() {
+            const percent = (currentStep / totalSteps) * 100;
+            document.getElementById('progressFill').style.width = percent + '%';
+            document.getElementById('currentStep').textContent = currentStep;
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+            currentStep = step;
+            updateProgress();
+        }
+
+        function selectOption(step, value) {
+            formData['step' + step] = value;
+
+            // Visual feedback
+            const buttons = document.querySelectorAll('#step' + step + ' .option-btn');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+
+            // Auto-advance after short delay
+            setTimeout(() => {
+                showStep(step + 1);
+            }, 250);
+        }
+
+        function goBack(fromStep) {
+            showStep(fromStep - 1);
+        }
+
+        function submitName() {
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+
+            if (!firstName) {
+                alert('Please enter your first name');
+                return;
+            }
+
+            formData.firstName = firstName;
+            formData.lastName = lastName;
+            showStep(6);
+        }
+
+        async function submitContact() {
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            if (!phone && !email) {
+                alert('Please enter at least a phone number or email');
+                return;
+            }
+
+            formData.phone = phone;
+            formData.email = email;
+
+            // Prepare submission data
+            const submissionData = {
+                cpapStatus: formData.step1 || '',
+                sleepStudy: formData.step2 || '',
+                sleepApneaSeverity: formData.step3 || '',
+                insurance: formData.step4 || '',
+                firstName: formData.firstName,
+                lastName: formData.lastName || '',
+                phone: phone,
+                email: email
+            };
+
+            // Submit to API
+            try {
+                const response = await fetch(`${API_URL}/api/submit`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(submissionData)
+                });
+
+                if (!response.ok) {
+                    console.error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+            }
+
+            // Show name in results
+            document.getElementById('userName').textContent = formData.firstName || 'there';
+
+            showStep(7);
+            startTimer();
+
+            // Fire Meta Pixel Lead event
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
+        }
+
+        // Countdown timer
+        function startTimer() {
+            let minutes = 5;
+            let seconds = 0;
+
+            const timer = setInterval(() => {
+                seconds--;
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                }
+                if (minutes < 0) {
+                    clearInterval(timer);
+                    minutes = 0;
+                    seconds = 0;
+                }
+
+                document.getElementById('timerMin').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('timerSec').textContent = String(seconds).padStart(2, '0');
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
