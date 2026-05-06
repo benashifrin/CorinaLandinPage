@@ -665,7 +665,12 @@
                     body: JSON.stringify(submissionData)
                 });
 
-                if (!response.ok) {
+                if (response.ok) {
+                    // Fire Meta Pixel Lead event only on successful submission
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'Lead');
+                    }
+                } else {
                     console.error('Form submission failed');
                 }
             } catch (error) {
@@ -677,11 +682,6 @@
 
             showStep(7);
             startTimer();
-
-            // Fire Meta Pixel Lead event
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead');
-            }
         }
 
         // Countdown timer
