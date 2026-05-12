@@ -588,6 +588,11 @@
         function selectOption(step, value) {
             formData['step' + step] = value;
 
+            // Fire custom event for first step completion
+            if (step === 1 && typeof fbq !== 'undefined') {
+                fbq('trackCustom', 'FormStart');
+            }
+
             // Visual feedback
             const buttons = document.querySelectorAll('#step' + step + ' .option-btn');
             buttons.forEach(btn => btn.classList.remove('selected'));
@@ -666,9 +671,10 @@
                 });
 
                 if (response.ok) {
-                    // Fire Meta Pixel Lead event only on successful submission
+                    // Fire Meta Pixel custom event on successful submission
+                    // Using custom event because standard Lead is blocked for health category
                     if (typeof fbq !== 'undefined') {
-                        fbq('track', 'Lead');
+                        fbq('trackCustom', 'FormComplete');
                     }
                 } else {
                     console.error('Form submission failed');
