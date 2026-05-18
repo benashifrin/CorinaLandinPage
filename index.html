@@ -375,7 +375,7 @@
         <!-- Header -->
         <div class="header">
             <div class="logo-text">Atanase Smiles</div>
-            <p class="header-subtitle">See if you qualify for a CPAP alternative in under 60 seconds</p>
+            <p class="header-subtitle">See if you qualify for a CPAP alternative in under 30 seconds</p>
             <div class="google-rating">
                 <span class="stars">★★★★★</span>
                 <span>4.9 rating · 160 Google Reviews</span>
@@ -385,106 +385,58 @@
         <!-- Progress Bar -->
         <div class="progress-container">
             <div class="progress-bar">
-                <div class="progress-fill" id="progressFill" style="width: 14%"></div>
+                <div class="progress-fill" id="progressFill" style="width: 20%"></div>
             </div>
-            <p class="progress-text">Step <span id="currentStep">1</span> of 7</p>
+            <p class="progress-text">Step <span id="currentStep">1</span> of 5</p>
         </div>
 
         <!-- Form Content -->
         <div class="form-content">
-            <!-- Step 1: Current CPAP Status -->
+            <!-- Step 1: Sleep Study -->
             <div class="step active" id="step1">
-                <h2>Do you currently use a CPAP machine?</h2>
+                <h2>Have you done a sleep study?</h2>
                 <div class="options">
-                    <button class="option-btn" onclick="selectOption(1, 'Yes, currently using CPAP')">
-                        <strong>Yes, I currently use a CPAP</strong>
-                        <span>Looking for an alternative</span>
+                    <button class="option-btn" onclick="selectOption(1, 'Yes, completed sleep study')">
+                        <strong>Yes, I have</strong>
+                        <span>Completed a sleep study</span>
                     </button>
-                    <button class="option-btn" onclick="selectOption(1, 'Yes, but stopped using it')">
-                        <strong>Yes, but I stopped using it</strong>
-                        <span>CPAP was uncomfortable or inconvenient</span>
+                    <button class="option-btn" onclick="selectOption(1, 'No, not yet')">
+                        <strong>No, not yet</strong>
+                        <span>Haven't had a sleep study</span>
                     </button>
-                    <button class="option-btn" onclick="selectOption(1, 'No, recently diagnosed')">
-                        <strong>No, I was recently diagnosed</strong>
-                        <span>Looking for treatment options</span>
-                    </button>
-                    <button class="option-btn" onclick="selectOption(1, 'No, but suspect sleep apnea')">
-                        <strong>No, but I suspect I have sleep apnea</strong>
-                        <span>Experiencing symptoms</span>
+                    <button class="option-btn" onclick="selectOption(1, 'Scheduled soon')">
+                        <strong>I have one scheduled</strong>
+                        <span>Sleep study coming up</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Step 2: Sleep Study -->
+            <!-- Step 2: Insurance -->
             <div class="step" id="step2">
-                <h2>Have you done a sleep study?</h2>
+                <h2>Do you have dental or medical insurance?</h2>
                 <div class="options">
-                    <button class="option-btn" onclick="selectOption(2, 'Yes, completed sleep study')">
-                        <strong>Yes, I have</strong>
-                        <span>Completed a sleep study</span>
+                    <button class="option-btn" onclick="selectOption(2, 'Yes, dental insurance')">
+                        <strong>Yes, I have dental insurance</strong>
                     </button>
-                    <button class="option-btn" onclick="selectOption(2, 'No, not yet')">
-                        <strong>No, not yet</strong>
-                        <span>Haven't had a sleep study</span>
+                    <button class="option-btn" onclick="selectOption(2, 'Yes, medical insurance')">
+                        <strong>Yes, I have medical insurance</strong>
+                        <span>Often covers sleep apnea treatment</span>
                     </button>
-                    <button class="option-btn" onclick="selectOption(2, 'Scheduled soon')">
-                        <strong>I have one scheduled</strong>
-                        <span>Sleep study coming up</span>
+                    <button class="option-btn" onclick="selectOption(2, 'Both dental and medical')">
+                        <strong>I have both</strong>
+                        <span>We'll help maximize your benefits</span>
+                    </button>
+                    <button class="option-btn" onclick="selectOption(2, 'No insurance')">
+                        <strong>No insurance</strong>
+                        <span>Financing options available</span>
                     </button>
                 </div>
                 <button class="btn-back" onclick="goBack(2)">Back</button>
             </div>
 
-            <!-- Step 3: Sleep Apnea Severity -->
+            <!-- Step 3: Name -->
             <div class="step" id="step3">
-                <h2>How would you describe your sleep apnea?</h2>
-                <div class="options">
-                    <button class="option-btn" onclick="selectOption(3, 'Mild')">
-                        <strong>Mild</strong>
-                        <span>5-15 breathing interruptions per hour</span>
-                    </button>
-                    <button class="option-btn" onclick="selectOption(3, 'Moderate')">
-                        <strong>Moderate</strong>
-                        <span>15-30 breathing interruptions per hour</span>
-                    </button>
-                    <button class="option-btn" onclick="selectOption(3, 'Severe')">
-                        <strong>Severe</strong>
-                        <span>30+ breathing interruptions per hour</span>
-                    </button>
-                    <button class="option-btn" onclick="selectOption(3, 'Not sure')">
-                        <strong>I'm not sure</strong>
-                        <span>Haven't had a sleep study or don't remember</span>
-                    </button>
-                </div>
-                <button class="btn-back" onclick="goBack(3)">Back</button>
-            </div>
-
-            <!-- Step 4: Insurance -->
-            <div class="step" id="step4">
-                <h2>Do you have dental or medical insurance?</h2>
-                <div class="options">
-                    <button class="option-btn" onclick="selectOption(4, 'Yes, dental insurance')">
-                        <strong>Yes, I have dental insurance</strong>
-                    </button>
-                    <button class="option-btn" onclick="selectOption(4, 'Yes, medical insurance')">
-                        <strong>Yes, I have medical insurance</strong>
-                        <span>Often covers sleep apnea treatment</span>
-                    </button>
-                    <button class="option-btn" onclick="selectOption(4, 'Both dental and medical')">
-                        <strong>I have both</strong>
-                        <span>We'll help maximize your benefits</span>
-                    </button>
-                    <button class="option-btn" onclick="selectOption(4, 'No insurance')">
-                        <strong>No insurance</strong>
-                        <span>Financing options available</span>
-                    </button>
-                </div>
-                <button class="btn-back" onclick="goBack(4)">Back</button>
-            </div>
-
-            <!-- Step 5: Name -->
-            <div class="step" id="step5">
-                <p style="text-align: center; color: #1a5c6b; font-weight: 600; margin-bottom: 8px;">See if you qualify</p>
+                <p style="text-align: center; color: #1a5c6b; font-weight: 600; margin-bottom: 8px;">Almost done!</p>
                 <h2>What's your name?</h2>
                 <div class="input-group">
                     <label>First Name</label>
@@ -495,12 +447,12 @@
                     <input type="text" id="lastName" placeholder="Enter your last name">
                 </div>
                 <button class="btn-continue" onclick="submitName()">Continue</button>
-                <button class="btn-back" onclick="goBack(5)">Back</button>
+                <button class="btn-back" onclick="goBack(3)">Back</button>
             </div>
 
-            <!-- Step 6: Contact -->
-            <div class="step" id="step6">
-                <p style="text-align: center; color: #1a5c6b; font-weight: 600; margin-bottom: 8px;">See if you qualify</p>
+            <!-- Step 4: Contact -->
+            <div class="step" id="step4">
+                <p style="text-align: center; color: #1a5c6b; font-weight: 600; margin-bottom: 8px;">Last step!</p>
                 <h2>How can we reach you?</h2>
                 <div class="input-group">
                     <label>Phone Number</label>
@@ -511,11 +463,11 @@
                     <input type="email" id="email" placeholder="you@example.com">
                 </div>
                 <button class="btn-continue" onclick="submitContact()">See My Results</button>
-                <button class="btn-back" onclick="goBack(6)">Back</button>
+                <button class="btn-back" onclick="goBack(4)">Back</button>
             </div>
 
-            <!-- Step 7: Results -->
-            <div class="step" id="step7">
+            <!-- Step 5: Results -->
+            <div class="step" id="step5">
                 <div class="success-header">
                     <div class="checkmark">
                         <svg viewBox="0 0 24 24" fill="none">
@@ -565,11 +517,11 @@
     </div>
 
     <script>
-        // API endpoint - update this after deploying App Runner
+        // API endpoint
         const API_URL = 'https://m2e4y59snn.us-east-1.awsapprunner.com';
 
         let currentStep = 1;
-        const totalSteps = 7;
+        const totalSteps = 5;
         let formData = {};
 
         function updateProgress() {
@@ -624,7 +576,7 @@
 
             formData.firstName = firstName;
             formData.lastName = lastName;
-            showStep(6);
+            showStep(4);
         }
 
         async function submitContact() {
@@ -650,10 +602,8 @@
 
             // Prepare submission data
             const submissionData = {
-                cpapStatus: formData.step1 || '',
-                sleepStudy: formData.step2 || '',
-                sleepApneaSeverity: formData.step3 || '',
-                insurance: formData.step4 || '',
+                sleepStudy: formData.step1 || '',
+                insurance: formData.step2 || '',
                 firstName: formData.firstName,
                 lastName: formData.lastName || '',
                 phone: phone,
@@ -672,7 +622,6 @@
 
                 if (response.ok) {
                     // Fire Meta Pixel custom event on successful submission
-                    // Using custom event because standard Lead is blocked for health category
                     if (typeof fbq !== 'undefined') {
                         fbq('trackCustom', 'FormComplete');
                     }
@@ -686,7 +635,7 @@
             // Show name in results
             document.getElementById('userName').textContent = formData.firstName || 'there';
 
-            showStep(7);
+            showStep(5);
             startTimer();
         }
 
